@@ -1953,15 +1953,16 @@ static void _create_tab_home(lv_theme_t *th, lv_obj_t *parent)
 	// Set brand label.
 	lv_obj_t *label_brand = lv_label_create(parent, NULL);
 	lv_label_set_recolor(label_brand, true);
-	s_printf(btn_colored_text, "%s%s", text_color, " hekate#");
+	s_printf(btn_colored_text, "%s%s", text_color, "CFW PACK#");
+	
 	lv_label_set_text(label_brand, btn_colored_text);
-	lv_obj_set_pos(label_brand, 50, 48);
+	lv_obj_set_pos(label_brand, 598, 48);
 
 	// Set tagline label.
 	lv_obj_t *label_tagline = lv_label_create(parent, NULL);
 	lv_obj_set_style(label_tagline, &hint_small_style_white);
-	lv_label_set_static_text(label_tagline, "Echt jetzt na endlich kommt CFW-PACK");
-	lv_obj_set_pos(label_tagline, 50, 82);
+	lv_label_set_static_text(label_tagline, " CFW-HOMEBREW-MODDING DEUTSCHLAND @ FACEBOOK");                                         
+	lv_obj_set_pos(label_tagline, 415, 82);
 
 	static lv_style_t icons;
 	lv_style_copy(&icons, th->label.prim);
