@@ -1950,12 +1950,41 @@ static void _create_tab_home(lv_theme_t *th, lv_obj_t *parent)
 
 	char btn_colored_text[64];
 
-	// Set brand label.
+
 	lv_obj_t *label_brand = lv_label_create(parent, NULL);
 	lv_label_set_recolor(label_brand, true);
-	s_printf(btn_colored_text, "%s%s", text_color, "CFW PACK - BLUE EDITION#");
-	lv_label_set_text(label_brand, btn_colored_text);
-	lv_obj_set_pos(label_brand, 500, 48);
+
+	// Stil für die Textfarbe
+	lv_style_t style;
+	lv_style_copy(&style, lv_label_get_style(label_brand));
+	style.text.color = LV_COLOR_HEX(0x0054FE);
+	lv_label_set_style(label_brand, &style);
+
+	// Text für das Label
+	lv_label_set_text(label_brand, "CFW PACK - BLUE EDITION");
+
+	// Position des Labels berechnen
+	int label_width = lv_obj_get_width(label_brand);
+	int parent_width = lv_obj_get_width(parent);
+	int x_position = (parent_width - label_width) / 2;
+
+	// Position des Labels festlegen
+	lv_obj_set_pos(label_brand, x_position, 48);
+
+
+	// Set brand label.
+	// lv_obj_t *label_brand = lv_label_create(parent, NULL);
+	// lv_label_set_recolor(label_brand, true);
+	// s_printf(btn_colored_text, "%s%s", text_color, "  CFW PACK - BLUE EDITION#");
+	// lv_label_set_text(label_brand, btn_colored_text);
+	// lv_obj_set_pos(label_brand, 500, 48);
+	
+	// Set brand label.
+	// lv_obj_t *label_brand = lv_label_create(parent, NULL);
+	// lv_label_set_recolor(label_brand, true);
+	// s_printf(btn_colored_text, "%s%s", text_color, "  CFW PACK - BLUE EDITION#");
+	// lv_label_set_text(label_brand, btn_colored_text);
+	// lv_obj_set_pos(label_brand, 500, 48);
 
 	// Set tagline label.
 	lv_obj_t *label_tagline = lv_label_create(parent, NULL);
