@@ -1950,10 +1950,11 @@ static void _create_tab_home(lv_theme_t *th, lv_obj_t *parent)
 
 	char btn_colored_text[64];
 
-	lv_obj_t *label_brand = lv_label_create(parent, NULL);
+
+lv_obj_t *label_brand = lv_label_create(parent, NULL);
 lv_label_set_recolor(label_brand, true);
 
-// Stil für die Textfarbe
+// Stil für die Textfarbe des Brand-Labels
 lv_style_t style;
 lv_style_copy(&style, lv_label_get_style(label_brand));
 style.text.color = LV_COLOR_HEX(0x0054FE);
@@ -1982,8 +1983,12 @@ lv_style_copy(&style_tagline, lv_label_get_style(label_tagline));
 style_tagline.text.color = LV_COLOR_HEX(0x0082FF);
 lv_label_set_style(label_tagline, &style_tagline);
 
+// Position des Tagline-Labels berechnen
+int label_tagline_width = lv_obj_get_width(label_tagline);
+int x_position_tagline = (parent_width - label_tagline_width) / 2;
+
 // Position des Tagline-Labels festlegen
-lv_obj_set_pos(label_tagline, x_position, 82);
+lv_obj_set_pos(label_tagline, x_position_tagline, 82);
 
 
 
