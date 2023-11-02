@@ -1951,39 +1951,40 @@ static void _create_tab_home(lv_theme_t *th, lv_obj_t *parent)
 	char btn_colored_text[64];
 
 	lv_obj_t *label_brand = lv_label_create(parent, NULL);
-	lv_label_set_recolor(label_brand, true);
+lv_label_set_recolor(label_brand, true);
 
-	// Stil für die Textfarbe
-	lv_style_t style_brand; // Verwende einen anderen Namen für den Stil
-	lv_style_copy(&style_brand, lv_label_get_style(label_brand));
-	style_brand.text.color = LV_COLOR_HEX(0x0054FE);
-	lv_label_set_style(label_brand, &style_brand);
+// Stil für die Textfarbe
+lv_style_t style;
+lv_style_copy(&style, lv_label_get_style(label_brand));
+style.text.color = LV_COLOR_HEX(0x0054FE);
+lv_label_set_style(label_brand, &style);
 
-	// Text für das Label
-	lv_label_set_text(label_brand, "CFW PACK - BLUE EDITION");
+// Text für das Brand-Label
+lv_label_set_text(label_brand, "CFW PACK - BLUE EDITION");
 
-	// Position des Labels berechnen
-	int label_width = lv_obj_get_width(label_brand);
-	int parent_width = lv_obj_get_width(parent);
-	int x_position = (parent_width - label_width) / 2;
+// Position des Brand-Labels berechnen
+int label_width = lv_obj_get_width(label_brand);
+int parent_width = lv_obj_get_width(parent);
+int x_position = (parent_width - label_width) / 2;
 
-	// Position des Labels festlegen
-	lv_obj_set_pos(label_brand, x_position, 48);
+// Position des Brand-Labels festlegen
+lv_obj_set_pos(label_brand, x_position, 48);
 
-	lv_obj_t *label_tagline = lv_label_create(parent, NULL);
-	lv_obj_set_style(label_tagline, &hint_small_style_white);
+lv_obj_t *label_tagline = lv_label_create(parent, NULL);
+lv_obj_set_style(label_tagline, &hint_small_style_white);
 
-	// Text für das Label
-	lv_label_set_text(label_tagline, "CFW - HOMEBREW - MODDING - DEUTSCHLAND @ FACEBOOK");
+// Text für das Tagline-Label
+lv_label_set_text(label_tagline, "CFW - HOMEBREW - MODDING - DEUTSCHLAND @ FACEBOOK");
 
-	// Textfarbe ändern
-	lv_style_t style_tagline; // Verwende einen anderen Namen für den Stil
-	lv_style_copy(&style_tagline, lv_label_get_style(label_tagline));
-	style_tagline.text.color = LV_COLOR_HEX(0x0082FF);
-	lv_label_set_style(label_tagline, &style_tagline);
+// Stil für die Textfarbe des Tagline-Labels
+lv_style_t style_tagline;
+lv_style_copy(&style_tagline, lv_label_get_style(label_tagline));
+style_tagline.text.color = LV_COLOR_HEX(0x0082FF);
+lv_label_set_style(label_tagline, &style_tagline);
 
-	// Position des Labels festlegen
-	lv_obj_set_pos(label_tagline, x_position, 82);
+// Position des Tagline-Labels festlegen
+lv_obj_set_pos(label_tagline, x_position, 82);
+
 
 
 	
