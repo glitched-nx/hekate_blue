@@ -1998,11 +1998,6 @@ static void _create_tab_home(lv_theme_t *th, lv_obj_t *parent)
 	style.text.color = LV_COLOR_HEX(0x0082FF);
 	lv_label_set_style(label_tagline, &style);
 
-	// Position des Labels berechnen
-	int label_width = lv_obj_get_width(label_tagline);
-	int parent_width = lv_obj_get_width(parent);
-	int x_position = (parent_width - label_width) / 2;
-
 	// Position des Labels festlegen
 	lv_obj_set_pos(label_tagline, x_position, 82);
 
