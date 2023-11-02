@@ -1950,15 +1950,14 @@ static void _create_tab_home(lv_theme_t *th, lv_obj_t *parent)
 
 	char btn_colored_text[64];
 
-
 	lv_obj_t *label_brand = lv_label_create(parent, NULL);
 	lv_label_set_recolor(label_brand, true);
 
 	// Stil für die Textfarbe
-	lv_style_t style;
-	lv_style_copy(&style, lv_label_get_style(label_brand));
-	style.text.color = LV_COLOR_HEX(0x0054FE);
-	lv_label_set_style(label_brand, &style);
+	lv_style_t style_brand; // Verwende einen anderen Namen für den Stil
+	lv_style_copy(&style_brand, lv_label_get_style(label_brand));
+	style_brand.text.color = LV_COLOR_HEX(0x0054FE);
+	lv_label_set_style(label_brand, &style_brand);
 
 	// Text für das Label
 	lv_label_set_text(label_brand, "CFW PACK - BLUE EDITION");
@@ -1971,21 +1970,6 @@ static void _create_tab_home(lv_theme_t *th, lv_obj_t *parent)
 	// Position des Labels festlegen
 	lv_obj_set_pos(label_brand, x_position, 48);
 
-
-	// Set brand label.
-	// lv_obj_t *label_brand = lv_label_create(parent, NULL);
-	// lv_label_set_recolor(label_brand, true);
-	// s_printf(btn_colored_text, "%s%s", text_color, "  CFW PACK - BLUE EDITION#");
-	// lv_label_set_text(label_brand, btn_colored_text);
-	// lv_obj_set_pos(label_brand, 500, 48);
-
-	// Set tagline label.
-	// lv_obj_t *label_tagline = lv_label_create(parent, NULL);
-	// lv_obj_set_style(label_tagline, &hint_small_style_white);
-	// lv_label_set_static_text(label_tagline, "CFW - HOMEBREW - MODDING - DEUTSCHLAND @ FACEBOOK");                                         
-	// lv_obj_set_pos(label_tagline, 390, 82);
-
-
 	lv_obj_t *label_tagline = lv_label_create(parent, NULL);
 	lv_obj_set_style(label_tagline, &hint_small_style_white);
 
@@ -1993,13 +1977,14 @@ static void _create_tab_home(lv_theme_t *th, lv_obj_t *parent)
 	lv_label_set_text(label_tagline, "CFW - HOMEBREW - MODDING - DEUTSCHLAND @ FACEBOOK");
 
 	// Textfarbe ändern
-	lv_style_t style;
-	lv_style_copy(&style, lv_label_get_style(label_tagline));
-	style.text.color = LV_COLOR_HEX(0x0082FF);
-	lv_label_set_style(label_tagline, &style);
+	lv_style_t style_tagline; // Verwende einen anderen Namen für den Stil
+	lv_style_copy(&style_tagline, lv_label_get_style(label_tagline));
+	style_tagline.text.color = LV_COLOR_HEX(0x0082FF);
+	lv_label_set_style(label_tagline, &style_tagline);
 
 	// Position des Labels festlegen
 	lv_obj_set_pos(label_tagline, x_position, 82);
+
 
 	
 	static lv_style_t icons;
