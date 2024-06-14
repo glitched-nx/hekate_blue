@@ -2,21 +2,16 @@
 
 ![Image of Hekate](https://user-images.githubusercontent.com/3665130/60391760-bc1e8c00-9afe-11e9-8b7a-b065873081b2.png)
 
-
 Custom Graphical Nintendo Switch bootloader, firmware patcher, tools, and many more.
-
-
 
 - [Features](#features)
 - [Bootloader folders and files](#bootloader-folders-and-files)
 - [Bootloader configuration](#bootloader-configuration)
-  * [hekate global Configuration keys/values](#hekate-global-configuration-keysvalues-when-entry-is-config)
-  * [Boot entry key/value combinations](#boot-entry-keyvalue-combinations)
-  * [Boot entry key/value combinations for Exosphère](#boot-entry-keyvalue-combinations-for-exosphère)
-  * [Payload storage](#payload-storage)
-  * [Nyx Configuration keys/values](#nyx-configuration-keysvalues-nyxini)
-
-
+  - [hekate global Configuration keys/values](#hekate-global-configuration-keysvalues-when-entry-is-config)
+  - [Boot entry key/value combinations](#boot-entry-keyvalue-combinations)
+  - [Boot entry key/value combinations for Exosphère](#boot-entry-keyvalue-combinations-for-exosphère)
+  - [Payload storage](#payload-storage)
+  - [Nyx Configuration keys/values](#nyx-configuration-keysvalues-nyxini)
 
 ## Features
 
@@ -33,7 +28,6 @@ Custom Graphical Nintendo Switch bootloader, firmware patcher, tools, and many m
 - **USB Gamepad** -- Converts Switch with Joycon into a USB HID Gamepad
 - **Hardware and Peripherals info** (SoC, Fuses, RAM, Display, Touch, eMMC, SD, Battery, PSU, Charger)
 - **Many other tools** like Archive Bit Fixer, Touch Calibration, SD/eMMC Benchmark, AutoRCM enabler and more
-
 
 ## Bootloader folders and files
 
@@ -61,20 +55,15 @@ Custom Graphical Nintendo Switch bootloader, firmware patcher, tools, and many m
 | bootloader/payloads/     | For the `Payloads` menu. All CFW bootloaders, tools, Linux payloads are supported. Autoboot only supported by including them into an ini. |
 | bootloader/libtools/     | Reserved                                                              |
 
-
-
 ## Bootloader configuration
 
 The bootloader can be configured via 'bootloader/hekate_ipl.ini' (if it is present on the SD card). Each ini section represents a boot entry, except for the special section 'config' that controls the global configuration.
 
-
 There are four possible type of entries. "**[ ]**": Boot entry, "**{ }**": Caption, "**#**": Comment, "*newline*": .ini cosmetic newline.
-
 
 **You can find a template [Here](./res/hekate_ipl_template.ini)**
 
-
-### hekate Global Configuration keys/values (when entry is *[config]*):
+## hekate Global Configuration keys/values (when entry is *[config]*)
 
 | Config option      | Description                                                |
 | ------------------ | ---------------------------------------------------------- |
@@ -88,8 +77,7 @@ There are four possible type of entries. "**[ ]**": Boot entry, "**{ }**": Capti
 | updater2p=0        | 0: Disable, 1: Force updates (if needed) the reboot2payload binary to be hekate. |
 | backlight=100      | Screen backlight level. 0-255.                             |
 
-
-### Boot entry key/value combinations:
+## Boot entry key/value combinations
 
 | Config option          | Description                                                |
 | ---------------------- | ---------------------------------------------------------- |
@@ -126,7 +114,6 @@ There are four possible type of entries. "**[ ]**": Boot entry, "**{ }**": Capti
 | logopath={FILE path}   | If it exists, it will load the specified bitmap. Otherwise `bootloader/bootlogo.bmp` will be used if exists |
 | icon={FILE path}       | Force Nyx to use the icon defined here. If this is not found, it will check for a bmp named as the boot entry ([Test 2] -> `bootloader/res/Test 2.bmp`). Otherwise defaults will be used. |
 
-
 **Note1**: When using the wildcard (`/*`) with `kip1` you can still use the normal `kip1` after that to load extra single kips.
 
 **Note2**: When using FSS0 it parses exosphere, warmboot and all core kips. You can override the first 2 by using `secmon`/`warmboot` after defining `fss0`.
@@ -135,8 +122,7 @@ You can define `kip1` to load an extra kip or many via the wildcard (`/*`) usage
 **Warning**: Careful when you define *fss0 core* kips when using `fss0` or the folder (when using `/*`) includes them.
 This is in case the kips are incompatible between them. If compatible, you can override `fss0` kips with no issues (useful for testing with intermediate kip changes). In such cases, the `kip1` line must be under `fss0` line.
 
-
-### Boot entry key/value combinations for Exosphère:
+## Boot entry key/value combinations for Exosphère
 
 | Config option          | Description                                                |
 | ---------------------- | ---------------------------------------------------------- |
@@ -146,14 +132,11 @@ This is in case the kips are incompatible between them. If compatible, you can o
 | cal0writesys=1         | Overrides Exosphère config `allow_writing_to_cal_sysmmc`. If that key doesn't exist, `exosphere.ini` will be used. |
 | usb3force=1            | Overrides system settings mitm config `usb30_force_enabled`. If that key doesn't exist, `system_settings.ini` will be used. |
 
-
 **Note**: `cal0blank`, `cal0writesys`, `usb3force`, as stated override the `exosphere.ini` or `system_settings.ini`. 0: Disable, 1: Enable, Key Missing: Use original value.
-
 
 **Note2**: `blank_prodinfo_{sys/emu}mmc`, `allow_writing_to_cal_sysmmc` and `usb30_force_enabled` in `exosphere.ini` and `system_settings.ini` respectively, are the only atmosphere config keys that can affect hekate booting configuration externally, **if** the equivalent keys in hekate config are missing.
 
-
-### Payload storage:
+## Payload storage
 
 hekate has a boot storage in the binary that helps it configure it outside of BPMP enviroment:
 
@@ -168,8 +151,7 @@ hekate has a boot storage in the binary that helps it configure it outside of BP
 | '0x98' id[8]            | When `Boot from ID` is set, it will search all inis automatically and find the boot entry with that id and boot it. Must be NULL terminated. |
 | '0xA0' emummc_path[120] | When `Boot to emuMMC` is set, it will override the current emuMMC (boot entry or emummc.ini). Must be NULL terminated. |
 
-
-### Nyx Configuration keys/values (nyx.ini):
+## Nyx Configuration keys/values (nyx.ini)
 
 | Config option      | Description                                                |
 | ------------------ | ---------------------------------------------------------- |
@@ -184,7 +166,6 @@ hekate has a boot storage in the binary that helps it configure it outside of BP
 | jcdisable=0        | 1: Disables Joycon driver completely.                      |
 | jcforceright=0     | 1: Forces right joycon to be used as main mouse control.   |
 | bpmpclock=1        | 0: Auto, 1: Fastest, 2: Faster, 3: Fast. Use 2 or 3 if Nyx hangs or some functions like UMS/Backup Verification fail. |
-
 
 ```
 hekate  (c) 2018,      naehrwert, st4rk.
