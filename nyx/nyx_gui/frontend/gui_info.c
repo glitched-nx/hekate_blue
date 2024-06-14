@@ -2520,17 +2520,32 @@ void create_tab_info(lv_theme_t *th, lv_obj_t *parent)
 	lv_obj_t *label_txt2 = lv_label_create(h1, NULL);
 	lv_label_set_recolor(label_txt2, true);
 
+	// hekate original
+	// if (lockpick_found)
+	// {
+	//	lv_label_set_static_text(label_txt2,
+	//		"View Ipatches and dump the unpatched and patched versions\nof BootROM.\n"
+	//		"Or dump every single key via #C7EA46 Lockpick RCM#.\n");
+	// }
+	// else
+	// {
+	//	lv_label_set_static_text(label_txt2,
+	//		"View Ipatches and dump the unpatched and patched versions\nof BootROM. Or dump every single key via #C7EA46 Lockpick RCM#.\n"
+	//		"#FFDD00 bootloader/payloads/Lockpick_RCM.bin is missing or old!#\n");
+	// }
+
+	// hekate fork - change button to Enigma RCM
 	if (lockpick_found)
 	{
 		lv_label_set_static_text(label_txt2,
 			"View Ipatches and dump the unpatched and patched versions\nof BootROM.\n"
-			"Or dump every single key via #C7EA46 Lockpick RCM#.\n");
+			"Or dump every single key via #C7EA46 Enigma RCM#.\n");
 	}
 	else
 	{
 		lv_label_set_static_text(label_txt2,
-			"View Ipatches and dump the unpatched and patched versions\nof BootROM. Or dump every single key via #C7EA46 Lockpick RCM#.\n"
-			"#FFDD00 bootloader/payloads/Lockpick_RCM.bin is missing or old!#\n");
+			"View Ipatches and dump the unpatched and patched versions\nof BootROM. Or dump every single key via #C7EA46 Enigma RCM#.\n"
+			"#FFDD00 bootloader/payloads/Enigma_RCM.bin is missing or old!#\n");
 	}
 
 	lv_obj_set_style(label_txt2, &hint_small_style);
