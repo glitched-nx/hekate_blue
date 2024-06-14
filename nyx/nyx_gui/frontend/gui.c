@@ -2366,14 +2366,25 @@ static void _nyx_main_menu(lv_theme_t * th)
 	line_style.body.shadow.width = 0;
 
 	lv_cont_set_style(line, &line_style);
-	lv_obj_set_size(line, LV_HOR_RES - LV_DPI * 3 / 5, 1);
-	lv_obj_set_pos(line, LV_DPI * 3 / 10, 63);
+	// hekate original
+	// lv_obj_set_size(line, LV_HOR_RES - LV_DPI * 3 / 5, 1);
+	// lv_obj_set_pos(line, LV_DPI * 3 / 10, 63);
 
-	lv_obj_set_top(line, true);
+	// lv_obj_set_top(line, true);
+
+	// line = lv_cont_create(lv_layer_top(), line);
+	// lv_obj_set_pos(line, LV_DPI * 3 / 10, 656);
+	// lv_obj_set_top(line, true);
+	
+	// hekate fork - hide the write line separators
+	lv_obj_set_size(line, LV_HOR_RES - LV_DPI * 0 / 5, 0);
+	lv_obj_set_pos(line, LV_DPI * 3 / 10, 0);
+
+	lv_obj_set_top(line, false);
 
 	line = lv_cont_create(lv_layer_top(), line);
-	lv_obj_set_pos(line, LV_DPI * 3 / 10, 656);
-	lv_obj_set_top(line, true);
+	lv_obj_set_pos(line, LV_DPI * 3 / 10, 720);
+	lv_obj_set_top(line, false);
 
 	// Option save button.
 	lv_tabview_set_tab_load_action(tv, _show_hide_save_button);
