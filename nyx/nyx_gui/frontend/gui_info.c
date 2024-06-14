@@ -1061,7 +1061,8 @@ static lv_res_t _launch_lockpick_action(lv_obj_t *btns, const char * txt)
 		lv_obj_t *list = lv_list_create(NULL, NULL);
 		lv_obj_set_size(list, 1, 1);
 		lv_list_set_single_mode(list, true);
-		lv_list_add(list, NULL, "Lockpick_RCM.bin", NULL);
+	//	lv_list_add(list, NULL, "Lockpick_RCM.bin", NULL);
+		lv_list_add(list, NULL, "Enigma_RCM.bin", NULL);
 		lv_obj_t *btn;
 		btn = lv_list_get_prev_btn(list, NULL);
 		launch_payload(btn);
@@ -1081,8 +1082,13 @@ static lv_res_t _create_mbox_lockpick(lv_obj_t *btn)
 	lv_obj_t * mbox = lv_mbox_create(dark_bg, NULL);
 	lv_mbox_set_recolor_text(mbox, true);
 
-	lv_mbox_set_text(mbox, "#FF8000 Lockpick RCM#\n\nThis will launch Lockpick RCM.\nDo you want to continue?\n\n"
-		"To return back from lockpick use\n#96FF00 Reboot to hekate#.");
+	// nyx original
+	// lv_mbox_set_text(mbox, "#FF8000 Lockpick RCM#\n\nThis will launch Lockpick RCM.\nDo you want to continue?\n\n"
+	// 	"To return back from lockpick use\n#96FF00 Reboot to hekate#.");
+	
+	// nyx fork
+	lv_mbox_set_text(mbox, "#FF8000 Enigma RCM#\n\nThis will launch Enigma RCM.\nDo you want to continue?\n\n"
+	"To return back from Enigma RCM use\n#96FF00 Reboot to hekate#.");
 
 	lv_mbox_add_btns(mbox, mbox_btn_map, _launch_lockpick_action);
 	lv_obj_set_width(mbox, LV_HOR_RES / 9 * 5);
@@ -2434,7 +2440,8 @@ static bool _lockpick_exists_check()
 	if (sd_mount())
 	{
 		FIL fp;
-		if (f_open(&fp, "bootloader/payloads/Lockpick_RCM.bin", FA_READ))
+	//	if (f_open(&fp, "bootloader/payloads/Lockpick_RCM.bin", FA_READ))
+		if (f_open(&fp, "bootloader/payloads/Enigma_RCM.bin", FA_READ))
 			goto out;
 
 		// Read Lockpick payload and check versioning.
@@ -2506,10 +2513,11 @@ void create_tab_info(lv_theme_t *th, lv_obj_t *parent)
 	lv_obj_align(btn, line_sep, LV_ALIGN_OUT_BOTTOM_LEFT, LV_DPI / 4, LV_DPI / 4);
 	lv_btn_set_action(btn, LV_BTN_ACTION_CLICK, _create_window_bootrom_info_status);
 
-	// Create TSEC Keys button.
+	// Create TSEC Keys button - changed to EnigmaRCM
 	lv_obj_t *btn2 = lv_btn_create(h1, btn);
 	label_btn = lv_label_create(btn2, NULL);
-	lv_label_set_static_text(label_btn, SYMBOL_KEY"  Lockpick");
+	// lv_label_set_static_text(label_btn, SYMBOL_KEY"  Lockpick");
+	lv_label_set_static_text(label_btn, SYMBOL_KEY" EnigmaRCM");
 	lv_obj_align(btn2, btn, LV_ALIGN_OUT_RIGHT_TOP, LV_DPI * 11 / 15, 0);
 	lv_btn_set_action(btn2, LV_BTN_ACTION_CLICK, _create_mbox_lockpick);
 
@@ -2520,7 +2528,7 @@ void create_tab_info(lv_theme_t *th, lv_obj_t *parent)
 	lv_obj_t *label_txt2 = lv_label_create(h1, NULL);
 	lv_label_set_recolor(label_txt2, true);
 
-	// hekate original
+	// nyx original
 	// if (lockpick_found)
 	// {
 	//	lv_label_set_static_text(label_txt2,
@@ -2534,7 +2542,7 @@ void create_tab_info(lv_theme_t *th, lv_obj_t *parent)
 	//		"#FFDD00 bootloader/payloads/Lockpick_RCM.bin is missing or old!#\n");
 	// }
 
-	// hekate fork - change button to Enigma RCM
+	// nyx fork - button changed to EnigmaRCM
 	if (lockpick_found)
 	{
 		lv_label_set_static_text(label_txt2,
