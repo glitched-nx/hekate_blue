@@ -1947,81 +1947,93 @@ static void _create_tab_home(lv_theme_t *th, lv_obj_t *parent)
     // lv_label_set_static_text(label_tagline, "THE ALL IN ONE BOOTLOADER FOR ALL YOUR NEEDS");
     // lv_obj_set_pos(label_tagline, 50, 82);
 
-	// nyx fork - change home label $ tagline
-    lv_obj_t *label_brand = lv_label_create(parent, NULL);
-    lv_label_set_recolor(label_brand, true);
+	// // hekate fork - change home label $ tagline
+    // lv_obj_t *label_brand = lv_label_create(parent, NULL);
+    // lv_label_set_recolor(label_brand, true);
 
-    // Stil für die Textfarbe des Brand-Labels
-    lv_style_t style;
-    lv_style_copy(&style, lv_label_get_style(label_brand));
-    style.text.color = LV_COLOR_HEX(0x0054FE);
-    lv_label_set_style(label_brand, &style);	
-
-    // Text für das Brand-Label
-    lv_label_set_text(label_brand, "BLUE EDITION 2");
-
-    // Position des Brand-Labels festlegen
-    // lv_obj_align(label_brand, NULL, LV_ALIGN_CENTER, 0, 48);
-
-	// Position des Brand-Labels festlegen
-    lv_obj_set_pos(label_brand, x_position, 48);
-
-    // Stil für die Textfarbe des Brand-Labels
+    // // Stil für die Textfarbe des Brand-Labels
     // lv_style_t style;
     // lv_style_copy(&style, lv_label_get_style(label_brand));
     // style.text.color = LV_COLOR_HEX(0x0054FE);
     // lv_label_set_style(label_brand, &style);	
 
-    // Text für das Brand-Label
+    // // Text für das Brand-Label
     // lv_label_set_text(label_brand, "BLUE EDITION 2");
 
-    // Position des Brand-Labels berechnen
+    // // Position des Brand-Labels berechnen
     // int label_width = lv_obj_get_width(label_brand);
     // int parent_width = lv_obj_get_width(parent);
     // int x_position = (parent_width - label_width) / 2;
 
+    // // Position des Brand-Labels festlegen
+    // lv_obj_set_pos(label_brand, x_position, 48);
+
     // lv_obj_t *label_tagline = lv_label_create(parent, NULL);
     // lv_obj_set_style(label_tagline, &hint_small_style_white);
 
-    // Text für das Tagline-Label
+    // // Text für das Tagline-Label
     // lv_label_set_text(label_tagline, "CFW - HOMEBREW - MODDING - DEUTSCHLAND @ FACEBOOK");
 
-    // Stil für die Textfarbe des Tagline-Labels
+    // // Stil für die Textfarbe des Tagline-Labels
     // lv_style_t style_tagline;
     // lv_style_copy(&style_tagline, lv_label_get_style(label_tagline));
     // style_tagline.text.color = LV_COLOR_HEX(0x0082FF);
     // lv_label_set_style(label_tagline, &style_tagline);
 
-    // Position des Tagline-Labels berechnen
+    // // Position des Tagline-Labels berechnen
     // int label_tagline_width = lv_obj_get_width(label_tagline);
     // int x_position_tagline = (parent_width - label_tagline_width) / 2;
 
+    // // Position des Tagline-Labels festlegen
+    // lv_obj_set_pos(label_tagline, x_position_tagline, 82);	
+
     // static lv_style_t icons;
     // lv_style_copy(&icons, th->label.prim);
-    // icons.text.font = &hekate_symbol_120
+    // icons.text.font = &hekate_symbol_120;
 
-    lv_obj_t *label_tagline = lv_label_create(parent, NULL);
-    lv_obj_set_style(label_tagline, &hint_small_style_white);
+	// hekate fork - change home label $ tagline
+	lv_obj_t *label_brand = lv_label_create(parent, NULL);
+	lv_label_set_recolor(label_brand, true);
 
-    // Text für das Tagline-Label
-    lv_label_set_text(label_tagline, "CFW - HOMEBREW - MODDING - DEUTSCHLAND @ FACEBOOK");
+	// Stil für die Textfarbe des Brand-Labels
+	lv_style_t style;
+	lv_style_copy(&style, lv_label_get_style(label_brand));
+	style.text.color = LV_COLOR_HEX(0x0054FE);
+	lv_label_set_style(label_brand, &style);	
 
-    // Stil für die Textfarbe des Tagline-Labels
-    lv_style_t style_tagline;
-    lv_style_copy(&style_tagline, lv_label_get_style(label_tagline));
-    style_tagline.text.color = LV_COLOR_HEX(0x0082FF);
-    lv_label_set_style(label_tagline, &style_tagline);
+	// Text für das Brand-Label
+	lv_label_set_text(label_brand, "BLUE EDITION 2");
+
+	// Position des Brand-Labels berechnen
+	int label_width = lv_obj_get_width(label_brand);
+	int parent_width = lv_obj_get_width(parent);
+	int x_position = (parent_width - label_width) / 2;
+
+	// Position des Brand-Labels festlegen
+	lv_obj_set_pos(label_brand, x_position, 48);
+
+	lv_obj_t *label_tagline = lv_label_create(parent, NULL);
+	lv_obj_set_style(label_tagline, &hint_small_style_white);
+
+	// Text für das Tagline-Label
+	lv_label_set_text(label_tagline, "CFW - HOMEBREW - MODDING - DEUTSCHLAND @ FACEBOOK");
+
+	// Stil für die Textfarbe des Tagline-Labels
+	lv_style_t style_tagline;
+	lv_style_copy(&style_tagline, lv_label_get_style(label_tagline));
+	style_tagline.text.color = LV_COLOR_HEX(0x0082FF);
+	lv_label_set_style(label_tagline, &style_tagline);
+
+	// Position des Tagline-Labels berechnen
+	int label_tagline_width = lv_obj_get_width(label_tagline);
+	int x_position_tagline = (parent_width - label_tagline_width) / 2;
 
 	// Position des Tagline-Labels festlegen
-    lv_obj_set_pos(label_tagline, x_position_tagline, 82);	
+	lv_obj_set_pos(label_tagline, x_position_tagline, 82);	
 
-    // Position des Tagline-Labels festlegen
-    // lv_obj_align(label_tagline, NULL, LV_ALIGN_CENTER, 0, 82);
-
-
-    static lv_style_t icons;
-    lv_style_copy(&icons, th->label.prim);
-    icons.text.font = &hekate_symbol_120;
+	static lv_style_t icons;
+	lv_style_copy(&icons, th->label.prim);
+	icons.text.font = &hekate_symbol_120;
 	
 	// Launch button.
 	lv_obj_t *btn_launch = lv_btn_create(parent, NULL);
