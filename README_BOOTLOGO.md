@@ -1,19 +1,18 @@
 # hekate - Bootlogo
 
-The bootlogo can be any size with a maximum of 720 x 1280.
+Das Bootlogo kann jede Größe bis zu einem Maximum von 720 x 1280 haben.
 
-When it's smaller than 720 x 1280, it is automatically centered and the background takes the color of the first pixel.
+Ist es kleiner als 720 x 1280, wird es automatisch zentriert und der Hintergrund nimmt die Farbe des ersten Pixels an.
 
-The process is to create a landscape bootlogo and then rotate it 90 degrees counterclockwise.
+Der Prozess besteht darin, ein Landschafts-Bootlogo zu erstellen und dieses dann um 90 Grad gegen den Uhrzeigersinn zu drehen.
 
-Lastly, the supported format is 32-bit (ARGB) BMP. Classic 24-bit (RGB) BMPs are not supported for performance reasons.
+Zuletzt wird das unterstützte Format als 32-Bit (ARGB) BMP angegeben. Klassische 24-Bit (RGB) BMPs werden aus Leistungsgründen nicht unterstützt.
 
+## Konfiguration
 
-## How to configure
+Wenn ein Boot-Eintrag einen benutzerdefinierten Logo-Pfad (`logopath=`) angibt, wird dieses geladen.
 
-If a boot entry specifies a custom logo path (`logopath=`), this one will be loaded.
+Wenn das oben Genannte nicht gefunden wird oder das Format nicht korrekt ist, wird versucht, `bootloader/bootlogo.bmp` zu laden.
+Wird dies nicht gefunden, wird das Standard-Hekate-Logo verwendet.
 
-If the above is not found or the format is not correct, it will try to load `bootloader/bootlogo.bmp`.
-If this is not found, the default hekate logo will be used.
-
-(`bootloader/bootlogo.bmp` is basically like a global bootlogo.)
+(`bootloader/bootlogo.bmp` fungiert im Grunde wie ein globales Bootlogo.)
