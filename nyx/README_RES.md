@@ -1,20 +1,19 @@
-# Nyx - Background - Icons
+# Nyx - Hintergrund - Symbole
 
-The background for Nyx, must be a 1280 x 720 32-bit BMP. Alpha blending is taken into account. For that reason, if a solid background is required, that value must be 0xFF. There are sites that can produce the correct bmp.
+Der Hintergrund für Nyx muss ein 1280 x 720 32-Bit BMP sein. Alpha-Blending wird berücksichtigt. Aus diesem Grund muss der Wert 0xFF sein, wenn ein fester Hintergrund erforderlich ist. Es gibt Websites, die das korrekte BMP erzeugen können.
 
-The icons supported are 192 x 192 32-bit BMP. You can utilize transparency at will and make nice mixes with the button background.
+Die unterstützten Symbole sind 192 x 192 32-Bit BMP. Du kannst Transparenz nach Belieben nutzen und schöne Mischungen mit dem Tastenhintergrund erstellen.
 
-Additionally, using the `icon={sd path}`, the icon will get colorized if the name ends in `_hue.bmp`. That only works nicely if the icon is a white layout with transparency.
+Zusätzlich wird das Symbol unter Verwendung von `icon={sd path}` eingefärbt, wenn der Name mit `_hue.bmp` endet. Das funktioniert nur gut, wenn das Symbol ein weißes Layout mit Transparenz ist.
 
-If `_nobox.bmp` is used then the button background is removed. Useful for icon themes that aim for a specific style.
+Wenn `_nobox.bmp` verwendet wird, wird der Tastenhintergrund entfernt. Nützlich für Symbolthemen, die auf einen bestimmten Stil abzielen.
 
-A combo of both can be enabled via `_hue_nobox.bmp` suffix.
+Eine Kombination aus beiden kann über das Suffix `_hue_nobox.bmp` aktiviert werden.
 
-The default system icons (`icon_switch.bmp` and `icon_payload.bmp`) can be replaced with white layouts that have transparency. They can also be replaced with normal icons if the following exist: `icon_switch_custom.bmp` or/and `icon_payload_custom.bmp`
+Die Standardsystemsymbole (`icon_switch.bmp` und `icon_payload.bmp`) können durch weiße Layouts mit Transparenz ersetzt werden. Sie können auch durch normale Symbole ersetzt werden, wenn folgende vorhanden sind: `icon_switch_custom.bmp` und/oder `icon_payload_custom.bmp`.
 
+## Wie zu konfigurieren
 
-## How to configure
+Der Hintergrund muss nach /bootloader/res/background.bmp
 
-The background must go to /bootloader/res/background.bmp
-
-The icons can be utilized either via `[boot entries names]` -> `boot entries names.bmp` or by using `icon={sd path}` (preferred method), which should point at a bmp.
+Die Symbole können entweder über `[boot entries names]` -> `boot entries names.bmp` oder durch Verwendung von `icon={sd path}` (bevorzugte Methode) genutzt werden, die auf ein BMP verweisen sollte.
