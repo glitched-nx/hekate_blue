@@ -1998,11 +1998,11 @@ static void _create_tab_home(lv_theme_t *th, lv_obj_t *parent)
 	// Stil für die Textfarbe des Brand-Labels
 	lv_style_t style;
 	lv_style_copy(&style, lv_label_get_style(label_brand));
-	style.text.color = LV_COLOR_HEX(0xabc4ff);
+	style.text.color = LV_COLOR_HEX(0xFFFFFF);
 	lv_label_set_style(label_brand, &style);	
 
 	// Text für das Brand-Label
-	lv_label_set_text(label_brand, "blue pack NX");
+	lv_label_set_text(label_brand, "blue pack NX - AIO CFW PACK");
 
 	// Position des Brand-Labels berechnen
 	int label_width = lv_obj_get_width(label_brand);
@@ -2021,7 +2021,7 @@ static void _create_tab_home(lv_theme_t *th, lv_obj_t *parent)
 	// Stil für die Textfarbe des Tagline-Labels
 	lv_style_t style_tagline;
 	lv_style_copy(&style_tagline, lv_label_get_style(label_tagline));
-	style_tagline.text.color = LV_COLOR_HEX(0xabc4ff);
+	style_tagline.text.color = LV_COLOR_HEX(0xFFFFFF);
 	lv_label_set_style(label_tagline, &style_tagline);
 
 	// Position des Tagline-Labels berechnen
