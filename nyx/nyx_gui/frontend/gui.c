@@ -2456,7 +2456,7 @@ static void _nyx_main_menu(lv_theme_t * th)
 	lv_cont_set_style(line, &line_style); // Setzt den Stil eines bestehenden Containers (vermutlich "line") auf den in line_style definierten Stil
 	lv_obj_set_size(line, LV_HOR_RES - LV_DPI * 3 / 5, 1); // Hier wird die Größe des Containers "line" festgelegt. Die Breite wird berechnet als horizontale Bildschirmauflösung (LV_HOR_RES) minus drei Fünftel der DPI-Einstellung (LV_DPI). Die Höhe wird auf 1 Pixel gesetzt, was eine dünne Linie erzeugt.
 	lv_obj_set_pos(line, LV_DPI * 3 / 10, 63); // Diese Zeile positioniert die Linie auf dem Bildschirm. Die x-Koordinate ist drei Zehntel der DPI-Einstellung, die y-Koordinate ist auf 63 Pixel festgelegt.
-	lv_olv_obj_set_top(line, true); // Stellt sicher, dass die Linie im Vordergrund des aktuellen Layers dargestellt wird.
+	lv_obj_set_top(line, true); // Stellt sicher, dass die Linie im Vordergrund des aktuellen Layers dargestellt wird.
 	// Zweite Linie:
 	line = lv_cont_create(lv_layer_top(), line); // Hier wird ein neuer Container (vermutlich wieder "line" genannt) im obersten Layer (lv_layer_top()) erstellt. Der zweite Parameter (line) könnte darauf hindeuten, dass der neue Container in Relation zum vorherigen Container positioniert wird.
 	lv_obj_set_pos(line, LV_DPI * 3 / 10, 656); // Die Positionierung der zweiten Linie erfolgt analog zur ersten Linie, jedoch mit einer y-Koordinate von 656 Pixeln.
