@@ -1998,7 +1998,7 @@ static void _create_tab_home(lv_theme_t *th, lv_obj_t *parent)
 	// Stil für die Textfarbe des Brand-Labels
 	lv_style_t style;
 	lv_style_copy(&style, lv_label_get_style(label_brand));
-	style.text.color = LV_COLOR_HEX(0xFFFFFF);
+	style.text.color = LV_COLOR_HEX(0xbabaff);
 	lv_label_set_style(label_brand, &style);	
 
 	// Text für das Brand-Label
@@ -2021,7 +2021,7 @@ static void _create_tab_home(lv_theme_t *th, lv_obj_t *parent)
 	// Stil für die Textfarbe des Tagline-Labels
 	lv_style_t style_tagline;
 	lv_style_copy(&style_tagline, lv_label_get_style(label_tagline));
-	style_tagline.text.color = LV_COLOR_HEX(0xFFFFFF);
+	style_tagline.text.color = LV_COLOR_HEX(0xbabaff);
 	lv_label_set_style(label_tagline, &style_tagline);
 
 	// Position des Tagline-Labels berechnen
@@ -2448,7 +2448,7 @@ static void _nyx_main_menu(lv_theme_t * th)
 	static lv_style_t line_style; // Deklariert eine statische Variable für den Linienstil
 	lv_style_copy(&line_style, &lv_style_plain_color); // Kopiert den Standardstil in unseren benutzerdefinierten Stil
 
-	line_style.body.main_color = LV_COLOR_HEX(0xDDDDDD); // 0x505050 // Setzt die Hauptfarbe der Linie auf einen hellen Grauton
+	line_style.body.main_color = LV_COLOR_HEX(0xbabaff); // 0x505050 // Setzt die Hauptfarbe der Linie auf einen hellen Grauton
 	line_style.body.grad_color = line_style.body.main_color; // Setzt die Verlaufsfarbe auf die gleiche Farbe wie die Hauptfarbe
 	line_style.body.shadow.width = 2; // Deaktiviert den Schatten der Linie durch Setzen der Schattenbreite auf 0
 	
