@@ -2442,36 +2442,36 @@ static void _nyx_main_menu(lv_theme_t * th)
 	task_emmc_errors = lv_task_create(_nyx_emmc_issues, 2000, LV_TASK_PRIO_LOWEST, NULL);
 	lv_task_ready(task_emmc_errors);
 
-	// Create top level global line separators.
-	lv_obj_t *line = lv_cont_create(lv_layer_top(), NULL);
+	// hekate original - weiße Trennlinien
+	lv_obj_t *line = lv_cont_create(lv_layer_top(), NULL); // Erstellt einen neuen Container im obersten Layer für die Trennlinie
 
-	static lv_style_t line_style;
-	lv_style_copy(&line_style, &lv_style_plain_color);
+	static lv_style_t line_style; // Deklariert eine statische Variable für den Linienstil
+	lv_style_copy(&line_style, &lv_style_plain_color); // Kopiert den Standardstil in unseren benutzerdefinierten Stil
 
-	line_style.body.main_color = LV_COLOR_HEX(0xDDDDDD); // 0x505050
-	line_style.body.grad_color = line_style.body.main_color;
-	line_style.body.shadow.width = 0;
-
-	lv_cont_set_style(line, &line_style);
-	// hekate original
-	// lv_obj_set_size(line, LV_HOR_RES - LV_DPI * 3 / 5, 1);
-	// lv_obj_set_pos(line, LV_DPI * 3 / 10, 63);
-
-	// lv_obj_set_top(line, true);
-
-	// line = lv_cont_create(lv_layer_top(), line);
-	// lv_obj_set_pos(line, LV_DPI * 3 / 10, 656);
-	// lv_obj_set_top(line, true);
+	line_style.body.main_color = LV_COLOR_HEX(0xDDDDDD); // 0x505050 // Setzt die Hauptfarbe der Linie auf einen hellen Grauton
+	line_style.body.grad_color = line_style.body.main_color; // Setzt die Verlaufsfarbe auf die gleiche Farbe wie die Hauptfarbe
+	line_style.body.shadow.width = 2; // Deaktiviert den Schatten der Linie durch Setzen der Schattenbreite auf 0
 	
-	// hekate fork - hide the write line separators
-	lv_obj_set_size(line, LV_HOR_RES - LV_DPI * 0 / 5, 0);
-	lv_obj_set_pos(line, LV_DPI * 3 / 10, 0);
-
-	lv_obj_set_top(line, false);
-
-	line = lv_cont_create(lv_layer_top(), line);
-	lv_obj_set_pos(line, LV_DPI * 3 / 10, 720);
-	lv_obj_set_top(line, false);
+	// Erste Linie:
+	lv_cont_set_style(line, &line_style); // Setzt den Stil eines bestehenden Containers (vermutlich "line") auf den in line_style definierten Stil
+	lv_obj_set_size(line, LV_HOR_RES - LV_DPI * 3 / 5, 1); // Hier wird die Größe des Containers "line" festgelegt. Die Breite wird berechnet als horizontale Bildschirmauflösung (LV_HOR_RES) minus drei Fünftel der DPI-Einstellung (LV_DPI). Die Höhe wird auf 1 Pixel gesetzt, was eine dünne Linie erzeugt.
+	lv_obj_set_pos(line, LV_DPI * 3 / 10, 63); // Diese Zeile positioniert die Linie auf dem Bildschirm. Die x-Koordinate ist drei Zehntel der DPI-Einstellung, die y-Koordinate ist auf 63 Pixel festgelegt.
+	lv_olv_obj_set_top(line, true); // Stellt sicher, dass die Linie im Vordergrund des aktuellen Layers dargestellt wird.
+	// Zweite Linie:
+	line = lv_cont_create(lv_layer_top(), line); // Hier wird ein neuer Container (vermutlich wieder "line" genannt) im obersten Layer (lv_layer_top()) erstellt. Der zweite Parameter (line) könnte darauf hindeuten, dass der neue Container in Relation zum vorherigen Container positioniert wird.
+	lv_obj_set_pos(line, LV_DPI * 3 / 10, 656); // Die Positionierung der zweiten Linie erfolgt analog zur ersten Linie, jedoch mit einer y-Koordinate von 656 Pixeln.
+	lv_obj_set_top(line, true); // Stellt auch hier sicher, dass die zweite Linie im Vordergrund des aktuellen Layers dargestellt wird.
+	
+	// hekate fork - die weißen Trennlinien ausblenden
+	// Erste Linie:
+	// lv_obj_set_top(line, false);
+	// lv_obj_set_size(line, LV_HOR_RES - LV_DPI * 0 / 5, 0); // Differenz: Die Breite wird nicht reduziert (LV_DPI * 0 / 5 = 0) und die Höhe wird auf 0 gesetzt, was die Linie unsichtbar macht.
+	// lv_obj_set_pos(line, LV_DPI * 3 / 10, 0); // Differenz: Die y-Koordinate wird auf 0 gesetzt, was die Linie an den oberen Bildschirmrand verschiebt.
+	// lv_obj_set_top(line, false); // Differenz: Die Linie wird nicht im Vordergrund dargestellt, sondern möglicherweise von anderen Elementen überdeckt.
+	// Zweite Linie:
+	// line = lv_cont_create(lv_layer_top(), line); // Differenz: Diese Zeile ist identisch mit der nicht auskommentierten Version.
+	// lv_obj_set_pos(line, LV_DPI * 3 / 10, 720); // Differenz: Die y-Koordinate wird auf 720 Pixel gesetzt, was die Linie weiter nach unten verschiebt als in der aktiven Version.
+	// lv_obj_set_top(line, false); // Differenz: Wie bei der ersten Linie wird auch diese nicht im Vordergrund dargestellt.
 
 	// Option save button.
 	lv_tabview_set_tab_load_action(tv, _show_hide_save_button);
