@@ -587,7 +587,10 @@ static lv_res_t _create_window_fuses_info_status(lv_obj_t *btn)
 		strcpy(fuses_hos_version, "16.0.0 - 16.1.0");
 		break;
 	case 19:
-		strcpy(fuses_hos_version, "17.0.0+");
+		strcpy(fuses_hos_version, "17.0.0 - 18.1.0");
+		break;
+	case 20:
+		strcpy(fuses_hos_version, "19.0.0+");
 		break;
 	case 255:
 		strcpy(fuses_hos_version, "#FFD000 Overburnt#");
@@ -1762,7 +1765,7 @@ static lv_res_t _create_window_emmc_info_status(lv_obj_t *btn)
 	emmc_gpt_parse(&gpt);
 
 	u32 idx = 0;
-	u32 lines_left = 20;
+	int lines_left = 20;
 	s_printf(txt_buf + strlen(txt_buf), "#FFBA00 Idx Name                      Size        Offset     Sectors#\n");
 	LIST_FOREACH_ENTRY(emmc_part_t, part, &gpt, link)
 	{
@@ -2310,10 +2313,9 @@ static lv_res_t _create_window_battery_status(lv_obj_t *btn)
 
 	lv_label_set_static_text(lb_desc2,
 		"#00DDFF Battery Charger IC Info:#\n"
-		"Input voltage limit:\n"
 		"Input current limit:\n"
-		"Min voltage limit:\n"
-		"Fast charge current limit:\n"
+		"System voltage limit:\n"
+		"Charge current limit:\n"
 		"Charge voltage limit:\n"
 		"Charge status:\n"
 		"Temperature status:\n\n"
@@ -2331,12 +2333,9 @@ static lv_res_t _create_window_battery_status(lv_obj_t *btn)
 	lv_obj_t * lb_val2 = lv_label_create(val2, lb_desc);
 
 	// Charger IC info.
-	bq24193_get_property(BQ24193_InputVoltageLimit, &value);
-	s_printf(txt_buf, "\n%d mV\n", value);
-
 	int iinlim = 0;
 	bq24193_get_property(BQ24193_InputCurrentLimit, &iinlim);
-	s_printf(txt_buf + strlen(txt_buf), "%d mA\n", iinlim);
+	s_printf(txt_buf, "\n%d mA\n", iinlim);
 
 	bq24193_get_property(BQ24193_SystemMinimumVoltage, &value);
 	s_printf(txt_buf + strlen(txt_buf), "%d mV\n", value);
@@ -2406,8 +2405,8 @@ static lv_res_t _create_window_battery_status(lv_obj_t *btn)
 	if (!usb_pd.pdo_no)
 		strcat(txt_buf, "\nNon PD");
 
-	// Limit to 5 profiles so it can fit.
-	usb_pd.pdo_no = MIN(usb_pd.pdo_no, 5);
+	// Limit to 6 profiles so it can fit.
+	usb_pd.pdo_no = MIN(usb_pd.pdo_no, 6);
 
 	for (u32 i = 0; i < usb_pd.pdo_no; i++)
 	{
