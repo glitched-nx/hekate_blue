@@ -1998,11 +1998,11 @@ static void _create_tab_home(lv_theme_t *th, lv_obj_t *parent)
 	// Stil für die Textfarbe des Brand-Labels
 	lv_style_t style;
 	lv_style_copy(&style, lv_label_get_style(label_brand));
-	style.text.color = LV_COLOR_HEX(0xbabaff);
+	style.text.color = LV_COLOR_HEX(0x303ede);
 	lv_label_set_style(label_brand, &style);	
 
 	// Text für das Brand-Label
-	lv_label_set_text(label_brand, "blue pack NX - AIO CFW PACK");
+	lv_label_set_text(label_brand, "NX blue pack - AIO CFW PACK");
 
 	// Position des Brand-Labels berechnen
 	int label_width = lv_obj_get_width(label_brand);
@@ -2016,12 +2016,12 @@ static void _create_tab_home(lv_theme_t *th, lv_obj_t *parent)
 	lv_obj_set_style(label_tagline, &hint_small_style_white);
 
 	// Text für das Tagline-Label
-	lv_label_set_text(label_tagline, "CFW - homebrew - modding - deutschland @ facebook");
+	lv_label_set_text(label_tagline, "CFW - Homebrew - Modding - DE @ facebook");
 
-	// Stil für die Textfarbe des Tagline-Labels
+	// Stil für die Textfarbe des Tagline-Labels 123ede b3b9e8
 	lv_style_t style_tagline;
 	lv_style_copy(&style_tagline, lv_label_get_style(label_tagline));
-	style_tagline.text.color = LV_COLOR_HEX(0xbabaff);
+	style_tagline.text.color = LV_COLOR_HEX(0x8190d7);
 	lv_label_set_style(label_tagline, &style_tagline);
 
 	// Position des Tagline-Labels berechnen
