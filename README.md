@@ -1,17 +1,27 @@
-# hekate - Nyx (Readme - Deutsch)
+## hekate - Nyx (Readme - Deutsch)
 
 ![Bild von Hekate](https://user-images.githubusercontent.com/3665130/60391760-bc1e8c00-9afe-11e9-8b7a-b065873081b2.png)
 
 Benutzerdefinierter grafischer Nintendo Switch Bootloader, Firmware-Patcher, Werkzeuge und vieles mehr.
 
-- [Funktionen](#features)
-- [Bootloader-Verzeichnisse und -Dateien](#bootloader-folders-and-files)
-- [Bootloader-Konfiguration](#bootloader-configuration)
-  - [Globale Konfigurationsschlüssel/-werte von hekate](#hekate-global-configuration-keysvalues-when-entry-is-config)
-  - [Schlüssel/Werte-Kombinationen für Booteinträge](#boot-entry-keyvalue-combinations)
-  - [Schlüssel/Werte-Kombinationen für Booteinträge für Exosphère](#boot-entry-keyvalue-combinations-for-exosphère)
-  - [Payload-Speicher](#payload-storage)
-  - [Konfigurationsschlüssel/-werte von Nyx](#nyx-configuration-keysvalues-nyxini)
+- [hekate - Nyx (Readme - Deutsch)](#hekate---nyx-readme---deutsch)
+- [Funktionen](#funktionen)
+- [Bootloader-Verzeichnisse und -Dateien](#bootloader-verzeichnisse-und--dateien)
+- [Bootloader-Konfiguration](#bootloader-konfiguration)
+- [Globale Konfigurationsschlüssel/-werte von hekate (wenn Eintrag *\[config\]* ist)](#globale-konfigurationsschlüssel-werte-von-hekate-wenn-eintrag-config-ist)
+- [Schlüssel/Werte-Kombinationen für Booteinträge](#schlüsselwerte-kombinationen-für-booteinträge)
+- [Schlüssel/Werte-Kombinationen für Booteinträge für Exosphère](#schlüsselwerte-kombinationen-für-booteinträge-für-exosphère)
+- [Payload-Speicher](#payload-speicher)
+- [Konfigurationsschlüssel/-werte von Nyx (nyx.ini)](#konfigurationsschlüssel-werte-von-nyx-nyxini)
+- [hekate - Nyx (Readme - English)](#hekate---nyx-readme---english)
+- [Features](#features)
+- [Bootloader folders and files](#bootloader-folders-and-files)
+- [Bootloader configuration](#bootloader-configuration)
+  - [hekate Global Configuration keys/values (when entry is *\[config\]*)](#hekate-global-configuration-keysvalues-when-entry-is-config)
+  - [Boot entry key/value combinations](#boot-entry-keyvalue-combinations)
+  - [Boot entry key/value combinations for Exosphère](#boot-entry-keyvalue-combinations-for-exosphère)
+  - [Payload storage](#payload-storage)
+  - [Nyx Configuration keys/values (nyx.ini)](#nyx-configuration-keysvalues-nyxini)
 
 ## Funktionen
 
@@ -32,7 +42,7 @@ Benutzerdefinierter grafischer Nintendo Switch Bootloader, Firmware-Patcher, Wer
 ## Bootloader-Verzeichnisse und -Dateien
 
 | Verzeichnis/Datei              | Beschreibung                                                           |
-| ------------------------------ | ----------------------------------------------------------------------- |
+| ------------------------------ | --------------------------------------------------------------------- |
 | bootloader                     | Hauptverzeichnis.                                                      |
 |  \|__ bootlogo.bmp             | Wird verwendet, wenn kein `logopath`-Schlüssel gefunden wird. Benutzerdefiniert. Kann übersprungen werden. |
 |  \|__ hekate_ipl.ini           | Haupt-Bootloader-Konfiguration und Boot-Einträge im Menü `Launch`.      |
@@ -167,6 +177,9 @@ hekate hat einen Bootspeicher in der Binärdatei, der ihm hilft, außerhalb der 
 | jcforceright=0           | 1: Erzwingt die Verwendung des rechten Joycon als Hauptmaussteuerung.   |
 | bpmpclock=1              | 0: Auto, 1: Schnellste, 2: Schneller, 3: Schnell. Verwende 2 oder 3, wenn Nyx hängt oder einige Funktionen wie UMS/Backup-Überprüfung fehlschlagen. |
 
+
+
+
 ```plaintext
 hekate  (c) 2018,      naehrwert, st4rk.
         (c) 2018-2024, CTCaer.
@@ -217,14 +230,24 @@ Verwendete Open-Source- und kostenlose Pakete:
 
 Custom Graphical Nintendo Switch bootloader, firmware patcher, tools, and many more.
 
+- [hekate - Nyx (Readme - Deutsch)](#hekate---nyx-readme---deutsch)
+- [Funktionen](#funktionen)
+- [Bootloader-Verzeichnisse und -Dateien](#bootloader-verzeichnisse-und--dateien)
+- [Bootloader-Konfiguration](#bootloader-konfiguration)
+- [Globale Konfigurationsschlüssel/-werte von hekate (wenn Eintrag *\[config\]* ist)](#globale-konfigurationsschlüssel-werte-von-hekate-wenn-eintrag-config-ist)
+- [Schlüssel/Werte-Kombinationen für Booteinträge](#schlüsselwerte-kombinationen-für-booteinträge)
+- [Schlüssel/Werte-Kombinationen für Booteinträge für Exosphère](#schlüsselwerte-kombinationen-für-booteinträge-für-exosphère)
+- [Payload-Speicher](#payload-speicher)
+- [Konfigurationsschlüssel/-werte von Nyx (nyx.ini)](#konfigurationsschlüssel-werte-von-nyx-nyxini)
+- [hekate - Nyx (Readme - English)](#hekate---nyx-readme---english)
 - [Features](#features)
 - [Bootloader folders and files](#bootloader-folders-and-files)
 - [Bootloader configuration](#bootloader-configuration)
-  - [hekate global Configuration keys/values](#hekate-global-configuration-keysvalues-when-entry-is-config)
+  - [hekate Global Configuration keys/values (when entry is *\[config\]*)](#hekate-global-configuration-keysvalues-when-entry-is-config)
   - [Boot entry key/value combinations](#boot-entry-keyvalue-combinations)
   - [Boot entry key/value combinations for Exosphère](#boot-entry-keyvalue-combinations-for-exosphère)
   - [Payload storage](#payload-storage)
-  - [Nyx Configuration keys/values](#nyx-configuration-keysvalues-nyxini)
+  - [Nyx Configuration keys/values (nyx.ini)](#nyx-configuration-keysvalues-nyxini)
 
 ## Features
 
