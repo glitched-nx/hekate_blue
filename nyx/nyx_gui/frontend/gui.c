@@ -2024,7 +2024,7 @@ static void _create_tab_home(lv_theme_t *th, lv_obj_t *parent)
 	lv_label_set_style(label_brand, &style);	
 
 	// Text für das Brand-Label
-	lv_label_set_text(label_brand, "ɡlìtɔɥɘd-ɴx — bluɘpaɔk IV");
+	lv_label_set_text(label_brand, "ɡ𝗹ì𝘁ɔɥɘ𝗱-ɴ𝘅 — 𝗯𝗹𝘂ɘ𝗽𝗮ɔ𝗸 𝗜𝗩");
 
 	// Position des Brand-Labels berechnen
 	int label_width = lv_obj_get_width(label_brand);
@@ -2038,7 +2038,7 @@ static void _create_tab_home(lv_theme_t *th, lv_obj_t *parent)
 	lv_obj_set_style(label_tagline, &hint_small_style_white);
 
 	// Text für das Tagline-Label
-	lv_label_set_text(label_tagline, "NX — CFW & Homebrew — AIO PACK");
+	lv_label_set_text(label_tagline, "ɴx ᴄꜰᴡ & ʜᴏᴍᴇʙʀᴇᴡ ᴘᴀᴄᴋ");
 
 	// Stil für die Textfarbe des Tagline-Labels 123ede b3b9e8
 	lv_style_t style_tagline;
